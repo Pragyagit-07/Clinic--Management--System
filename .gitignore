@@ -22,3 +22,5 @@ build/
 # System/Editor files
 .DS_Store
 .vscode
+# Ignore secret keys
+Backend/serviceAccountKey.json

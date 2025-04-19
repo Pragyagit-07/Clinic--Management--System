@@ -1,0 +1,56 @@
+/* src/styles/PatientList.css */
+.patient-list-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .patient-list-container h2 {
+    text-align: center;
+    color: #333;
+  }
+  
+  .patient-list-container ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .patient-list-container li {
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .patient-list-container li:hover {
+    background-color: #e0f7fa;
+  }
+  
+  .patient-list-container .patient-info {
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .patient-list-container .patient-token {
+    font-size: 16px;
+    font-weight: bold;
+    color: #0077cc;
+  }
+  
+  .patient-list-container .patient-age {
+    font-size: 14px;
+    color: #757575;
+  }
+  .patient-list-container button{
+    background-color: #0077cc;
+  }
+  .patient-list-container button:hover{
+    background-color: #063557;
+  }

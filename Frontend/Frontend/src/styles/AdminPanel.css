@@ -1,0 +1,173 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+  }
+  
+  /* Container for the entire Admin Panel */
+  .admin-panel {
+    padding: 20px;
+  }
+  
+  /* Navigation Bar */
+  .admin-nav {
+    background: #343a40;
+    padding: 10px;
+    color: #fff;
+  }
+  
+  .admin-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .admin-nav li {
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  .admin-nav .active {
+    font-weight: bold;
+    border-bottom: 2px solid #007bff;
+  }
+  
+  
+  .admin-nav li:hover {
+    color: #00d1b2;
+  }
+  
+  /* Section Headers */
+  h2 {
+    margin-top: 20px;
+    margin-bottom: 15px;
+    color: #343a40;
+  }
+  
+  /* Form Styling */
+  form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  form input,
+  form select {
+    margin-bottom: 12px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  form button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  form button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Message Text */
+  p {
+    text-align: center;
+    margin-top: 10px;
+    color: green;
+  }
+  
+  /* Search section */
+  .search-section {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px auto;
+    max-width: 600px;
+  }
+  
+  .search-button {
+    padding: 10px 16px;
+    font-size: 16px;
+    background-color: #17a2b8;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .search-button:hover {
+    background-color: #138496;
+  }
+  
+  
+  /* User List */
+  .user-list {
+    margin-top: 20px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .user-list ul {
+    list-style: none;
+  }
+  
+  .user-list li {
+    background: #fff;
+    margin-bottom: 8px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  }
+  /*setting section  and appointment -section styling  */
+  .settings-section, .appointments-section {
+    background: #f9f9f9;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 6px rgba(0,0,0,0.1);
+  }
+  
+  .settings-section h3, .appointments-section h3 {
+    margin-bottom: 10px;
+  }
+  
+  .settings-section input, 
+  .appointments-section input, 
+  .appointments-section textarea {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 8px;
+    font-size: 14px;
+  }
+  
+  .settings-section button {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .settings-section button:hover {
+    background-color: #0056b3;
+  }
+  

@@ -2,7 +2,7 @@ import React, { useState, useEffect }from "react";
 import { collection, addDoc, serverTimestamp, query,  where,  doc,orderBy, getDocs } from "firebase/firestore";
 import { db } from "../Services/firebase";
 import { logoutUser } from "../auth/AuthService";
-import BillingForm from "./Billingform";
+import BillingForm from "./BillingForm";
 import { useNavigate } from "react-router-dom";
 import "../styles/ReceptionistDashboard.css";
 

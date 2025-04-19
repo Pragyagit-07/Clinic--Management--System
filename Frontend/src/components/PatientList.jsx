@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { collection, onSnapshot, deleteDoc, doc,updateDoc, } from "firebase/firestore";
 import { db } from "../Services/firebase";
-import BillingForm from './Billingform';
+import BillingForm from './BillingForm';
 import '../styles/PatientList.css';
 
 function PatientList() {

@@ -5,7 +5,7 @@ import { signUpUser} from "../auth/AuthService";
 import { getUsers } from "../Services/firebase";   
 import log from "../utils/logger";
 import PatientList from "./PatientList";
-import BillingForm from "./Billingform";
+import BillingForm from "./BillingForm";
 import "../styles/AdminPanel.css";
 
 

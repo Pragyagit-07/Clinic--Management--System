@@ -24,6 +24,7 @@ build/
 .vscode
 # Ignore secret keys
 echo Backend/serviceAccountKey.json >> .gitignore
+Backend/serviceAccountKey.json
 
 # # Ignore secret keys
 # Backend/serviceAccountKey.json

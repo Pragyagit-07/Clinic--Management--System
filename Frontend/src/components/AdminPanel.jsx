@@ -122,41 +122,7 @@ const [appointmentData, setAppointmentData] = useState({
     }
   };
   
-  // const handleBookAppointment = async () => {
-    
-  //   console.log("Booking appointment...", appointmentData);
   
-  //   if (
-  //     !appointmentData.patientName ||
-  //     !appointmentData.doctorName ||
-  //     !appointmentData.date ||
-  //     !appointmentData.time
-  //   ) {
-  //     alert("Please fill in all required fields.");
-  //     return;
-  //   }
-  
-  //   try {
-  //     // Save to Firestore
-  //     await addDoc(collection(db, "appointments"), {
-  //       ...appointmentData,
-  //       status: "Pending",
-  //       createdAt: Timestamp.now(),
-  //     });
-  
-  //     alert("Appointment booked successfully!");
-  //     setAppointmentData({
-  //       patientName: '',
-  //       doctorName: '',
-  //       date: '',
-  //       time: '',
-  //       notes: ''
-  //     });
-  //   } catch (error) {
-  //     console.error("Error booking appointment:", error);
-  //     alert("Failed to book appointment.");
-  //   }
-  // };
   //  setting handlers
   const handleUpdateProfile = () => {
     console.log("Updating profile with:", profileData);
@@ -301,51 +267,8 @@ const [appointmentData, setAppointmentData] = useState({
   </div>
 )}
 
-      {/* {activeTab === "appointments" && (
-        <div className="appointments-tab">
-          <h2>Appointments</h2>
-          
-           {/* Appointment Form */}
-           {/* <div className="appointments-section">
-      <h3>Book New Appointment</h3>
-      <form onSubmit={handleBookAppointment} style={{ maxWidth: "400px", marginTop: "20px" }}>
-      <input
-  type="text"
-  placeholder="Patient Name"
-  value={appointmentData.patientName}
-  onChange={(e) => setAppointmentData({ ...appointmentData, patientName: e.target.value })}
-/>
+    
 
-<input
-  type="text"
-  placeholder="Doctor Name"
-  value={appointmentData.doctorName}
-  onChange={(e) => setAppointmentData({ ...appointmentData, doctorName: e.target.value })}
-/>
-
-<input
-  type="date"
-  value={appointmentData.date}
-  onChange={(e) => setAppointmentData({ ...appointmentData, date: e.target.value })}
-/>
-
-<input
-  type="time"
-  value={appointmentData.time}
-  onChange={(e) => setAppointmentData({ ...appointmentData, time: e.target.value })}
-/>
-
-<textarea
-  placeholder="Reason / Notes"
-  value={appointmentData.notes}
-  onChange={(e) => setAppointmentData({ ...appointmentData, notes: e.target.value })}
-/>
-
-<button onClick={handleBookAppointment}>Book Appointment</button>
-</form>
-    </div>
-  </div>
-)}  */}
         {/* setting section */}
 
       {activeTab === "settings" && (

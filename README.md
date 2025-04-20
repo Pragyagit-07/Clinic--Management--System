@@ -74,6 +74,28 @@ A Full Stack Web  Application to manage clinic operations, including user manage
     - Runtime: Node.js
     - set firebase_config as an enviornment variable
     - Auto deployed From Github enabled.
+
+      ## Folder Structure
+      
+      ```bash
+       Clinic--Management--System
+      - Backend
+      -- config
+      --- firebase.js
+      -- controllers
+      --- authController.js
+      ---  billingController.js
+      --- doctorController.js
+      --- receptionistController.js
+      --  routes
+      --- authRoutes.js
+      --- billingRoutes.js
+      --- doctorRoutes.js
+      --- receptionistRoutes.js
+      -- services
+      --- tokenService.js
+      -- index.js
+      - Frontend
       
 
 
@@ -88,6 +110,12 @@ graph TD
   C --> D[Doctor Views Patient Info]
   D --> E[Doctor Adds Prescription]
   E --> F[History Saved & Sent to Receptionist]
+
+
+
+
+
+
 
 
 

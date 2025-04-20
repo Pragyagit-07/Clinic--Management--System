@@ -75,7 +75,7 @@ A Full Stack Web  Application to manage clinic operations, including user manage
     - set firebase_config as an enviornment variable
     - Auto deployed From Github enabled.
 
-      ###  Project Workflow
+     ## 🔄 Project Workflow
 
 ```mermaid
 graph TD
@@ -84,6 +84,7 @@ graph TD
   C --> D[Doctor Views Patient Info]
   D --> E[Doctor Adds Prescription]
   E --> F[History Saved & Sent to Receptionist]
+
 
 ## Folder Structure
 

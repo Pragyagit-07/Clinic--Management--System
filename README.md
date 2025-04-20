@@ -74,7 +74,7 @@ A Full Stack Web  Application to manage clinic operations, including user manage
     - Runtime: Node.js
     - set firebase_config as an enviornment variable
     - Auto deployed From Github enabled.
-    - 
+      
   
 
 

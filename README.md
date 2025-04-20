@@ -75,18 +75,10 @@ A Full Stack Web  Application to manage clinic operations, including user manage
     - set firebase_config as an enviornment variable
     - Auto deployed From Github enabled.
       
-      ## Folder Structure
-
-```bash
-📁 Clinic-Management-System
-├── 📁 Frontend             # React frontend
-├── 📁 Backend              # Node.js + Express backend
-├── 📄 README.md            # Project overview and documentation
-├── 📄 .gitignore           # Git ignored files
-├── 📄 LICENSE              # MIT license info
 
 
-     ## 🔄 Project Workflow
+
+  ## 🔄 Project Workflow
 
 ```mermaid
 

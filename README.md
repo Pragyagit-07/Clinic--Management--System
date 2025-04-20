@@ -31,6 +31,27 @@ A Full Stack Web  Application to manage clinic operations, including user manage
 -     View Patient History
 
 ## Getting Started
+## Installation & Set up steps
+- clone the repository and install dependencies for frontend and backend both:
+  ###  Backend Environment Variable Setup
+
+   On **Render**, create the following environment variable:
+
+ - **Key**: `FIREBASE_CONFIG`
+ - **Value**: Paste the entire contents of your `serviceAccountKey.json` file as a one-liner JSON string.
+
+❗️**Important:** Do not commit or push your actual Firebase config or secret key to GitHub. Keep it secure in your Render settings.
+
+  ### Backend
+  --bash
+  - cd Backend
+  - npm install
+  - npm run dev
+  ### frontend
+  --bash
+  - cd Frontend
+  - npm install
+  - npm run dev
 
 ## Deployment
 ### Frontend Deployment: Vercel
@@ -40,6 +61,23 @@ A Full Stack Web  Application to manage clinic operations, including user manage
 ### Backend Deployment : Render
 - The backend API is hosted on [Render](https://render.com).
 - API is accessible at :[https://clinic-management-system-eyaw.onrender.com](https://clinic-management-system-eyaw.onrender.com)
+
+   ## Deployment  Instructions
+  ### Frontend
+  - Deployed using vercel
+  - github repo connected
+  - Disabled vercel authentication" To make Public"
+  - main branch deployed to production
+    
+    ### Backend
+    - Deployed using render
+    - Runtime: Node.js
+    - set firebase_config as an enviornment variable
+    - Auto deployed From Github enabled.
+    - 
+  
+
+
 
 
 

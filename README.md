@@ -48,7 +48,7 @@ A Full Stack Web  Application to manage clinic operations, including user manage
   - npm install
   - npm run dev
   ### frontend
-   -- bash
+   --bash
   - cd Frontend
   - npm install
   - npm run dev
@@ -77,9 +77,9 @@ A Full Stack Web  Application to manage clinic operations, including user manage
 
       ## Folder Structure
       
-      ```bash
- - Backend
-  --config
+    ```bash
+     - Backend
+  -- config
       --- firebase.js
    -- controllers
    --- authController.js

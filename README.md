@@ -81,7 +81,7 @@ A Full Stack Web  Application to manage clinic operations, including user manage
       
   ```bash
   
-   # Clinic--Management--System
+ Clinic--Management--System
 ├── Backend
 │   ├── config
 │   │   └── firebase.js
@@ -141,6 +141,7 @@ A Full Stack Web  Application to manage clinic operations, including user manage
 ├── README.md
 ├── LICENSE
 ├── .gitignore
+```bash
     
 
 

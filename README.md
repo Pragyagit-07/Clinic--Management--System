@@ -74,22 +74,9 @@ A Full Stack Web  Application to manage clinic operations, including user manage
     - Runtime: Node.js
     - set firebase_config as an enviornment variable
     - Auto deployed From Github enabled.
-   
-    
-  ## 🔄 Project Workflow
-
-```mermaid
-
-graph TD
-  A[Receptionist Adds Patient Info] --> B[Token Generated]
-  B --> C[Data Stored in Firebase]
-  C --> D[Doctor Views Patient Info]
-  D --> E[Doctor Adds Prescription]
-  E --> F[History Saved & Sent to Receptionist]
-
-
-
-   ## Folder Structure
+      
+     ## Folder Structure
+ 
  ```
   
 Clinic--Management--System
@@ -152,6 +139,25 @@ Clinic--Management--System
 ├── README.md
 ├── LICENSE
 ├── .gitignore
+
+
+
+
+    
+  ## 🔄 Project Workflow
+
+```mermaid
+
+graph TD
+  A[Receptionist Adds Patient Info] --> B[Token Generated]
+  B --> C[Data Stored in Firebase]
+  C --> D[Doctor Views Patient Info]
+  D --> E[Doctor Adds Prescription]
+  E --> F[History Saved & Sent to Receptionist]
+
+
+
+ 
 
 
 

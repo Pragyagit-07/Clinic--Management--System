@@ -1,5 +1,5 @@
 import React, {useEffect,useState} from "react";
-import { collection, getDocs, getDoc,updateDoc, doc, query, orderBy, where } from "firebase/firestore";
+import { collection, addDoc, getDocs, getDoc,updateDoc, doc, query, orderBy, where } from "firebase/firestore";
 import {auth, db } from "../Services/firebase";
 import { logoutUser } from "../auth/AuthService";
 import { useNavigate } from "react-router-dom";
@@ -55,6 +55,11 @@ const handleAddPrescription = async (id) => {
   try {
     const prescriptionText = prescriptions[id] || "";
     const docRef = doc(db, "patients", id);
+    // Save prescription in subcollection
+  await addDoc(collection(db, "patients", id, "prescriptions"), {
+  content: prescriptionText,
+  createdAt: new Date(),
+  });
     await updateDoc(docRef, {
       prescription: prescriptionText,
       seen: true,
@@ -64,9 +69,9 @@ const handleAddPrescription = async (id) => {
     
 
     console.log(`Prescription added for patient ${id} and add seen status updated`);
-  
-    setPrescriptions("");
-    fetchPatients(); // refresh list
+    setPrescriptions((prev) => ({ ...prev, [id]: "" }));
+    fetchPatients(); // Refresh list
+    
   } catch (err) {
     log.error("Error adding prescription:", err);
   }

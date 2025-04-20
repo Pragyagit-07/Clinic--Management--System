@@ -13,6 +13,7 @@ const BillingForm = ({ patientId }) => {
   const [prescription, setPrescription] = useState([]);
   const [charges, setCharges] = useState([]);
   const [customCharge, setCustomCharge] = useState({ name: '', cost: '' });
+ 
   const [total, setTotal] = useState(0);
   const billRef = useRef();
 
@@ -25,11 +26,13 @@ const BillingForm = ({ patientId }) => {
         if (patientSnap.exists()) {
           const data = patientSnap.data();
           setPatient(data);
-          const safePrescription = Array.isArray(data.prescription) ? data.prescription : [];
-          setPrescription(safePrescription);
-        } else {
-          logger.warn('No patient found with ID:', patientId);
+       
+           const safePrescription = Array.isArray(data.prescription) ? data.prescription : [];
+           setPrescription(safePrescription);
+         } else {
+           logger.warn('No patient found with ID:', patientId);
         }
+          
       } catch (error) {
         logger.error('Failed to fetch patient:', error);
       }
@@ -37,6 +40,8 @@ const BillingForm = ({ patientId }) => {
 
     if (patientId) fetchPatient();
   }, [patientId]);
+  
+
 
   // Update total when charges change
   useEffect(() => {

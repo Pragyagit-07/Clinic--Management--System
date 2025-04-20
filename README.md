@@ -143,7 +143,8 @@ Clinic--Management--System
 ```
 
 
-
+## System Architectue
+![System Architecture]
 
     
 
@@ -157,6 +158,7 @@ graph TD
   C --> D[Doctor Views Patient Info]
   D --> E[Doctor Adds Prescription]
   E --> F[History Saved & Sent to Receptionist]
+
 
 
 

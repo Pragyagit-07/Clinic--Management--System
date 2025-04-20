@@ -144,7 +144,7 @@ Clinic--Management--System
 
 
 ## System Architectue
-![System Architecture]
+![System Architecture](/System_Architecture.pdf.pdf)
 
     
 

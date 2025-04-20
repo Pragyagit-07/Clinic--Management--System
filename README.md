@@ -80,6 +80,7 @@ A Full Stack Web  Application to manage clinic operations, including user manage
       ## Folder Structure
       
   ```bash
+  
 Clinic--Management--System
 ├── Backend
 │   ├── config
@@ -142,13 +143,7 @@ Clinic--Management--System
 ├── .gitignore
 
 
-    
-
-
-
-      
-      
-     
+       
   ## 🔄 Project Workflow
 
 ```mermaid

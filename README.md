@@ -79,8 +79,8 @@ A Full Stack Web  Application to manage clinic operations, including user manage
 
       ## Folder Structure
       
-    ```bash
-    Clinic--Management--System
+  ```bash
+   # Clinic--Management--System
 ├── Backend
 │   ├── config
 │   │   └── firebase.js

@@ -43,12 +43,12 @@ A Full Stack Web  Application to manage clinic operations, including user manage
 ❗️**Important:** Do not commit or push your actual Firebase config or secret key to GitHub. Keep it secure in your Render settings.
 
   ### Backend
-    ``` bash
+    --bash
   - cd Backend
   - npm install
   - npm run dev
   ### frontend
-   ``` bash
+   -- bash
   - cd Frontend
   - npm install
   - npm run dev

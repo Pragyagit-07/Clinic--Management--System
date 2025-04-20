@@ -88,6 +88,16 @@ graph TD
 
 
 
+## Folder Structure
+
+```bash
+📁 Clinic-Management-System
+├── 📁 Frontend             # React frontend
+├── 📁 Backend              # Node.js + Express backend
+├── 📄 README.md            # Project overview and documentation
+├── 📄 .gitignore           # Git ignored files
+├── 📄 LICENSE              # MIT license info
+
 
 
       

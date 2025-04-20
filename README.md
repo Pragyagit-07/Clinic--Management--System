@@ -78,6 +78,7 @@ A Full Stack Web  Application to manage clinic operations, including user manage
      ## 🔄 Project Workflow
 
 ```mermaid
+
 graph TD
   A[Receptionist Adds Patient Info] --> B[Token Generated]
   B --> C[Data Stored in Firebase]
@@ -86,15 +87,7 @@ graph TD
   E --> F[History Saved & Sent to Receptionist]
 
 
-## Folder Structure
 
-```bash
-📁 Clinic-Management-System
-├── 📁 Frontend             # React frontend
-├── 📁 Backend              # Node.js + Express backend
-├── 📄 README.md            # Project overview and documentation
-├── 📄 .gitignore           # Git ignored files
-├── 📄 LICENSE              # MIT license info
 
 
       

@@ -12,7 +12,8 @@ A Full Stack Web  Application to manage clinic operations, including user manage
 - Firebase (Authentication & Firestore)
 - CSS Modules
 - Winston for logging
-- vercel for deployment
+- vercel for  frontend deployment
+- Render for backend deployment
 
 ## Features
 - Home Page
@@ -30,5 +31,15 @@ A Full Stack Web  Application to manage clinic operations, including user manage
 -     View Patient History
 
 ## Getting Started
+
+## Deployment
+### Frontend Deployment: Vercel
+- the frontend is hosted on [Vercel](https://vercel.com).
+- Acsess the live app :[https://vercel.com/pragyas-projects-35058125/clinic-management-system](https://vercel.com/pragyas-projects-35058125/clinic-management-system)
+
+### Backend Deployment : Render
+- The backend API is hosted on [Render](https://render.com).
+- API is accessible at :[https://clinic-management-system-eyaw.onrender.com](https://clinic-management-system-eyaw.onrender.com)
+
 
 

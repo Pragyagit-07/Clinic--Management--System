@@ -3,8 +3,9 @@
 ## Description
 A Full Stack Web  Application to manage clinic operations, including user management, appointments, billing, and doctor-patient interactions.
 ## Roles
- - Doctor : View patients, add prescription, View Uppocmming Appointment
- - Receptionist : Add patients, assign tokens, generate billing
+ - Doctor : View patients, add prescription, View Upcomming Appointment
+ - Receptionist : Add patients, assign tokens, generate billing.
+ - admin : Add doctor, add receptionist, view reports, analysis
 
 ## Tech Stack
 - React.js(Frontend)
@@ -143,7 +144,11 @@ Clinic--Management--System
 ```
 
 
+## System Architectue
+![System Architecture](System_Architecture.pdf.pdf)
 
+## Low-level Design(LLD)
+view this full LLD document here[LLD Design- Clinic Management System](https://github.com/Pragyagit-07/Clinic--Management--System/blob/main/Complete%20_solutionLLD%20Document.docx.pdf)
 
     
 
@@ -159,6 +164,24 @@ graph TD
   E --> F[History Saved & Sent to Receptionist]
 
 
+```
+
+
+
+
+## Optimization of Solution
+### Code-Level 
+ - Used Modular Structure to keep Components reusable and testable
+ - Implemented logging using winston for all major actions
+
+### Architecture-Level
+- Backend deployed on Render (Scalable and serverless)
+- Frontend hosted on vercel ( fast CI/CD deployment)
+- Firebase firestore indexing applied for faster DB reads
+
+### Performance 
+- Lazy -loaded React components
+- Applied caching using browser local storage where appropriate
 
  
 

@@ -1,7 +1,7 @@
+require('dotenv').config();
 const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
-
 const doctorRoutes = require("./routes/doctorRoutes");
 const receptionistRoutes = require("./routes/receptionistRoutes");
 const billingRoutes = require("./routes/billingRoutes");

@@ -147,7 +147,7 @@ Clinic--Management--System
 ![System Architecture](System_Architecture.pdf.pdf)
 
 ## Low-level Design(LLD)
-view this full LLD document here[LLD Design- Clinic Management System]()
+view this full LLD document here[LLD Design- Clinic Management System](https://github.com/Pragyagit-07/Clinic--Management--System/blob/main/Complete%20_solutionLLD%20Document.docx.pdf)
 
     
 

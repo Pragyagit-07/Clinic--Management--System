@@ -166,7 +166,21 @@ graph TD
 ```
 
 
+
+
 ## Optimization of Solution
+### Code-Level 
+ - Used Modular Structure to keep Components reusable and testable
+ - Implemented logging using winston for all major actions
+
+### Architecture-Level
+- Backend deployed on Render (Scalable and serverless)
+- Frontend hosted on vercel ( fast CI/CD deployment)
+- Firebase firestore indexing applied for faster DB reads
+
+### Performance 
+- Lazy -loaded React components
+- Applied caching using browser local storage where appropriate
 
  
 

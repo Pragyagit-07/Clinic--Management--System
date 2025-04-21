@@ -3,8 +3,9 @@
 ## Description
 A Full Stack Web  Application to manage clinic operations, including user management, appointments, billing, and doctor-patient interactions.
 ## Roles
- - Doctor : View patients, add prescription, View Uppocmming Appointment
- - Receptionist : Add patients, assign tokens, generate billing
+ - Doctor : View patients, add prescription, View Upcomming Appointment
+ - Receptionist : Add patients, assign tokens, generate billing.
+ - admin : Add doctor, add receptionist, view reports, analysis
 
 ## Tech Stack
 - React.js(Frontend)

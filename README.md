@@ -146,6 +146,9 @@ Clinic--Management--System
 ## System Architectue
 ![System Architecture](System_Architecture.pdf.pdf)
 
+## Low-level Design(LLD)
+view this full LLD document here[LLD Design- Clinic Management System]()
+
     
 
   ## 🔄 Project Workflow

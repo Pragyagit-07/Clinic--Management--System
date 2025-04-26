@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
 import { db } from '../Services/firebase';
-import {  collection, addDoc, doc, getDoc, updateDoc, Timestamp } from 'firebase/firestore';
+import {  collection, addDoc, doc, getDoc, updateDoc, Timestamp, query, orderBy, limit, getDocs  } from 'firebase/firestore';
 import PatientBillingHistory from './PatientBillingHistory';
 import logger from '../utils/logger';
 import "../styles/BillingForm.css";
@@ -15,7 +15,10 @@ const BillingForm = ({ patientId }) => {
   const [customCharge, setCustomCharge] = useState({ name: '', cost: '' });
  
   const [total, setTotal] = useState(0);
-  const billRef = useRef();
+   const billRef = useRef();
+
+  
+
 
   // Fetch patient data and prescription
   useEffect(() => {
@@ -26,9 +29,21 @@ const BillingForm = ({ patientId }) => {
         if (patientSnap.exists()) {
           const data = patientSnap.data();
           setPatient(data);
+        const prescriptionsRef = collection(db, "patients", patientId, "prescriptions");
+    const prescriptionsQuery = query(prescriptionsRef, orderBy("createdAt", "desc"), limit(1));
+   const prescriptionsSnap = await getDocs(prescriptionsQuery);
+
+        
        
-           const safePrescription = Array.isArray(data.prescription) ? data.prescription : [];
-           setPrescription(safePrescription);
+          //  const safePrescription = Array.isArray(data.prescription) ? data.prescription : [];
+          //  setPrescription(safePrescription);
+          if (!prescriptionsSnap.empty) {
+            const prescriptionData = prescriptionsSnap.docs.map(doc => doc.data().content);
+            setPrescription(prescriptionData); // This will be an array
+          } else {
+            setPrescription([]);
+          }
+
          } else {
            logger.warn('No patient found with ID:', patientId);
         }
@@ -87,26 +102,107 @@ const BillingForm = ({ patientId }) => {
       });
       logger.info('Billing info saved', { patientId });
       alert('Billing information saved!');
-      setCharges([]);
+      // setCharges([]);// don't clear charges right after saving
+      <button onClick={() => setCharges([])}>Clear Bill Form</button>
+
     } 
     catch (error) {
       logger.error('Failed to save billing info:', error);
       alert('Error saving bill.');
     }
   };
-  const downloadPDF = async () => {
-    if (!billRef.current) return;
-    const canvas = await html2canvas(billRef.current);
-    const imgData = canvas.toDataURL("image/png");
+  //  old form of download pdf
+  // const downloadPDF = async () => {
+  //   if (!billRef.current) return;
+  //   const canvas = await html2canvas(billRef.current);
+  //   const imgData = canvas.toDataURL("image/png");
+  
+  //   const pdf = new jsPDF();
+  //   const imgProps = pdf.getImageProperties(imgData);
+  //   const pdfWidth = pdf.internal.pageSize.getWidth();
+  //   const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+  
+  //   pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+  //   pdf.save(`Bill_${patient?.name || 'patient'}.pdf`);
+  // };
+  // new fom of download pdf
+  const downloadPDF = () => {
+    if (!patient) return;
   
     const pdf = new jsPDF();
-    const imgProps = pdf.getImageProperties(imgData);
-    const pdfWidth = pdf.internal.pageSize.getWidth();
-    const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+    let y = 10;
   
-    pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
-    pdf.save(`Bill_${patient?.name || 'patient'}.pdf`);
+    // Clinic Header
+    pdf.setFontSize(16);
+    pdf.text(" Care Clinic", 80, y);
+    y += 7;
+    pdf.setFontSize(10);
+    pdf.text("1234 ABCD  Street, Mumbai", 80, y);
+    y += 5;
+    pdf.text("Phone: +91-98XXXXXXXX | Email: contact@care.com", 50, y);
+    y += 10;
+  
+    // Bill Info
+    pdf.setFontSize(12);
+    pdf.text(`Date: ${new Date().toLocaleDateString()}`, 14, y);
+    pdf.text(`Bill No: ${Math.floor(Math.random() * 100000)}`, 150, y);
+    y += 10;
+  
+    // Patient Info
+    pdf.setFontSize(12);
+    pdf.text(`Patient Name: ${patient.name}`, 14, y);
+    pdf.text(`Age: ${patient.age}`, 100, y);
+    y += 7;
+    pdf.text(`Token No: ${patient.token}`, 14, y);
+    y += 10;
+  
+    // Prescription
+    pdf.setFontSize(12);
+    pdf.text("Prescription:", 14, y);
+    y += 7;
+    prescription.forEach((item, index) => {
+      pdf.setFontSize(10);
+      pdf.text(`- ${item}`, 18, y);
+      y += 6;
+    });
+  
+    y += 5;
+  
+    // Charges Header
+    pdf.setFontSize(12);
+    pdf.text("Charges:", 14, y);
+    y += 7;
+  
+    pdf.setFontSize(10);
+    pdf.text("#", 14, y);
+    pdf.text("Item", 20, y);
+    pdf.text("Amount (₹)", 160, y, { align: "right" });
+    y += 6;
+  
+    // Charges List
+    charges.forEach((item, index) => {
+      pdf.text(`${index + 1}`, 14, y);
+      pdf.text(item.name, 20, y);
+      pdf.text(`${item.cost}`, 160, y, { align: "right" });
+      y += 6;
+    });
+  
+    // Total
+    y += 6;
+    pdf.setFontSize(11);
+    pdf.text("Total:", 140, y);
+    pdf.setFont("helvetica", "bold");
+    pdf.text(`₹${total}`, 160, y, { align: "right" });
+    pdf.setFont("helvetica", "normal");
+  
+    // Footer
+    y += 20;
+    pdf.setFontSize(10);
+    pdf.text("Thank you for visiting. Get well soon!", 60, y);
+  
+    pdf.save(`Bill_${patient.name}.pdf`);
   };
+  
   
 
   return (

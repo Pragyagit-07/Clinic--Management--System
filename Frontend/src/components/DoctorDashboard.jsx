@@ -61,7 +61,7 @@ const handleAddPrescription = async (id) => {
   createdAt: new Date(),
   });
     await updateDoc(docRef, {
-      prescription: prescriptionText,
+      // prescription: prescriptionText,
       seen: true,
       billed: false
       

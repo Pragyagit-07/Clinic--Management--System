@@ -1,13 +1,13 @@
 const { db } = require("../config/firebase");
 
 exports.createBill = async (req, res) => {
-  const { patientId, amount, description } = req.body;
+  const { patientId,  amount, description } = req.body;
 
   try {
     const billRef = db.collection("billing").doc();
     await billRef.set({
       patientId,
-      amount,
+       amount,
       description,
       date: new Date().toISOString()
     });
@@ -17,6 +17,7 @@ exports.createBill = async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 };
+
 
 exports.getBillingHistory = async (req, res) => {
   const { patientId } = req.params;

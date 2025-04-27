@@ -134,12 +134,12 @@ const BillingForm = ({ patientId }) => {
   
     // Clinic Header
     pdf.setFontSize(16);
-    pdf.text(" Care Clinic", 80, y);
+    pdf.text(" My Clinic", 80, y);
     y += 7;
     pdf.setFontSize(10);
     pdf.text("1234 ABCD  Street, Mumbai", 80, y);
     y += 5;
-    pdf.text("Phone: +91-98XXXXXXXX | Email: contact@care.com", 50, y);
+    pdf.text("Phone: +91-98XXXXXXXX | Email: contact@MyClinic.com", 50, y);
     y += 10;
   
     // Bill Info

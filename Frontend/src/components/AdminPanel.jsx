@@ -101,11 +101,13 @@ const [appointmentData, setAppointmentData] = useState({
     e.preventDefault();
     try {
       await addDoc(collection(db, "appointments"), {
+        // patientId,
         patientName,
         doctorId,
         date: appointmentDate,
         time: appointmentTime,
-        status: "booked",
+        // status: "booked",
+        // status: "scheduled",
         createdAt: new Date(),
       });
   
@@ -234,7 +236,9 @@ const [appointmentData, setAppointmentData] = useState({
       <input
         type="text"
         placeholder="Patient Name"
+       
         value={patientName}
+        
         onChange={(e) => setPatientName(e.target.value)}
         required
       />

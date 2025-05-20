@@ -30,7 +30,7 @@ const Home = () => {
       <Header />
       <main className="home-main">
         <div className="home-card">
-          <h1>Welcome to the Clinic Management System</h1>
+          <h1>Welcome to the  Fast Cure Medicare</h1>
           <p>Please log in to continue.</p>
           <button onClick={() => navigate("/login")}>Login</button>
         </div>
@@ -41,17 +41,6 @@ const Home = () => {
 };
 
 
-//   return (
-//     <div className="home-container">
-//         <Header />
-//         <div className="home-card">
-//       <h1>Welcome to the Clinic Management System</h1>
-//       <p>Please log in to continue.</p>
-//       <button onClick={() => navigate("/login")}>Login</button>
-//     </div>
-//     <Footer />
-//     </div>
-//   );
-// };
+
 
 export default Home;

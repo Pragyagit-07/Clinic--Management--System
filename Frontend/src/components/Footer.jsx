@@ -4,7 +4,7 @@ import "../styles/Footer.css";
 const Footer = () => {
   return (
     <footer className="main-footer">
-      <p>&copy; {new Date().getFullYear()} MyClinic. All rights reserved.</p>
+      <p>&copy; {new Date().getFullYear()} FastCureMediCare. All rights reserved.</p>
     </footer>
   );
 };

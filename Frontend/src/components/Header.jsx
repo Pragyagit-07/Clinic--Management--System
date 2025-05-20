@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <header className="main-header">
       <img src="/assets/clinic-logo.png" alt="Clinic Logo" className="clinic-logo" /> 
-      <h1 className="clinic-name">MyClinic</h1>
+      <h1 className="clinic-name"> FAST CURE MEDICARE</h1>
     </header>
   );
 };

@@ -10,7 +10,9 @@ import "../styles/AdminPanel.css";
 
 
 function AdminPanel() {
-  const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
+ const [qualification, setQualification] = useState("");
+ const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("doctor");
   const [message, setMessage] = useState("");
@@ -24,7 +26,11 @@ const [doctorId, setDoctorId] = useState("");
 const [appointmentDate, setAppointmentDate] = useState("");
 const [appointmentTime, setAppointmentTime] = useState("");
 const [doctorsList, setDoctorsList] = useState([]);
+ const [sidebarOpen, setSidebarOpen] = useState(false);
   
+const toggleMenu = () => {
+    setSidebarOpen(!sidebarOpen);
+  };
 
  
   // Fetch users on component mount
@@ -80,9 +86,19 @@ const [appointmentData, setAppointmentData] = useState({
     setLoading(true);
     try {
       await signUpUser(email, password, role);
-      setMessage(`User ${email} created successfully!`);
+      //After creating User, Store additional information in database
+      await addDoc(collection(db, "users"), {
+  email,
+  role,
+  name,
+  qualification,
+  createdAt: new Date()
+});
+      setMessage(`User ${name} created successfully!`);
       setEmail("");
       setPassword("");
+      setName("");
+      setQualification("");
       setRole("doctor");
       // Refresh user list after creating user
       const users = await getUsers();
@@ -149,18 +165,22 @@ const [appointmentData, setAppointmentData] = useState({
 
   return (
     <div  className="admin-panel" style={{ padding: "20px" }}>
-      {/* Navigation Bar */}
-      <nav className="admin-nav">
-        <ul style={{ listStyle: "none", display: "flex", gap: "20px" }}>
- 
-         
-         <li className={activeTab === "users" ? "active" : ""} onClick={()=> setActiveTab("users")}>Users</li> 
-          <li  onClick={() => setActiveTab("patients")}>Patients</li>
-          <li onClick={() => setActiveTab("billing")}>Billing</li>
-          <li  onClick={() => setActiveTab("appointments")}>Appointments</li>
-          <li onClick={() => setActiveTab("settings")}>Settings</li>
-        </ul>
-      </nav>
+      <div className="burger-menu" onClick={toggleMenu}>
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+
+
+<nav className={`admin-nav ${sidebarOpen ? "active" : ""}`}>
+  <ul>
+    <li className={activeTab === "users" ? "active" : ""} onClick={() => { setActiveTab("users"); setSidebarOpen(false); }}>Users</li>
+    <li className={activeTab === "patients" ? "active" : ""} onClick={() => { setActiveTab("patients"); setSidebarOpen(false); }}>Patients</li>
+    <li className={activeTab === "billing" ? "active" : ""} onClick={() => { setActiveTab("billing"); setSidebarOpen(false); }}>Billing</li>
+    <li className={activeTab === "appointments" ? "active" : ""} onClick={() => { setActiveTab("appointments"); setSidebarOpen(false); }}>Appointments</li>
+    <li className={activeTab === "settings" ? "active" : ""} onClick={() => { setActiveTab("settings"); setSidebarOpen(false); }}>Settings</li>
+  </ul>
+</nav>
 
       {/* Conditional Module Rendering */}
       {activeTab === "users" && (
@@ -168,6 +188,13 @@ const [appointmentData, setAppointmentData] = useState({
           <h2>Admin Panel - User Management</h2>
 
           <form onSubmit={handleCreateUser}>
+            <input
+            type="text"
+              placeholder="Full Name"
+         value={name}
+             onChange={(e) => setName(e.target.value)}
+        required
+            />
             <input
               type="email"
               placeholder="Email"
@@ -182,6 +209,13 @@ const [appointmentData, setAppointmentData] = useState({
               onChange={(e) => setPassword(e.target.value)}
               required
             />
+            <input
+    type="text"
+    placeholder="Qualification"
+    value={qualification}
+    onChange={(e) => setQualification(e.target.value)}
+    required
+  />
             <select value={role} onChange={(e) => setRole(e.target.value)}>
               <option value="doctor">Doctor</option>
               <option value="receptionist">Receptionist</option>
@@ -207,7 +241,9 @@ const [appointmentData, setAppointmentData] = useState({
           <ul>
             {filteredUsers.map((user, index) => (
               <li key={index}>
-                <strong>{user.email}</strong> ({user.role})
+                 <strong>{user.name || user.email}</strong> ({user.role})
+      <br />
+      <small>{user.qualification}</small>
               </li>
             ))}
           </ul>

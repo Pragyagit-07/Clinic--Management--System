@@ -39,3 +39,41 @@
   margin-bottom: 10px;
   line-height: 1.6;
 }
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  .about-container h1 {
+    font-size: 2rem;
+  }
+
+  .about-container h2 {
+    font-size: 1.3rem;
+  }
+
+  .about-container p,
+  .about-container li {
+    font-size: 1rem;
+  }
+
+  .about-section {
+    padding: 30px 15px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .about-container h1 {
+    font-size: 1.6rem;
+  }
+
+  .about-container h2 {
+    font-size: 1.1rem;
+  }
+
+  .about-container p,
+  .about-container li {
+    font-size: 0.95rem;
+  }
+
+  .about-section {
+    padding: 20px 10px;
+  }
+}

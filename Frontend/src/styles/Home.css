@@ -2,37 +2,40 @@ html, body {
   margin: 0;
   padding: 0;
   height: 100%;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 
 /* Home page full wrapper */
 .home-page {
- display: flex;
+   display: flex;
   flex-direction: column;
-  height: 100vh;
-  width: 100vw;
+  min-height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
   background: url("/assets/clinic-bg.jpg") no-repeat center center fixed;
   background-size: cover;
   background-color: #eef5f9;
+  overflow-x: hidden;
+  
 }
-/* Header and footer occupy their height */
+/* Header and footer occupy their height
 header, footer {
   flex-shrink: 0;
   width: 100%;
-}
+} */
 
 
 /* Main content should take available space and push footer to bottom */
 .home-main {
-  /* min-height: 100vh; */
-  /* width: 100vw;
-  background: url("/assets/clinic-bg.jpg") no-repeat center center fixed;
-  background-size: cover; */
+
   display: flex;
   flex: 1;
   justify-content: center;
   align-items: center;
-  padding: 0px 20px;
+  padding:  20px;
  
 }
 
@@ -40,18 +43,14 @@ header, footer {
 /* Centered card */
 .home-card {
   background: rgba(255, 255, 255, 0.1);
-  /* background: transparent; */
   backdrop-filter: blur(6px); 
-  /* -webkit-backdrop-filter: blur(6px); */ 
   padding: 20px;
   border-radius: 8px;
+ max-width: 600px;
   color: white;
   text-align: center;
-  /* border: none; */
-  /* border-radius: 12px; */
   box-shadow: none;
   text-align: center;
-  max-width: 600px;
   width: 100%;
   color: rgb(4, 4, 75);
 }

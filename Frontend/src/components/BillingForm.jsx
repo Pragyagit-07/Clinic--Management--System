@@ -32,11 +32,6 @@ const BillingForm = ({ patientId }) => {
         const prescriptionsRef = collection(db, "patients", patientId, "prescriptions");
     const prescriptionsQuery = query(prescriptionsRef, orderBy("createdAt", "desc"), limit(1));
    const prescriptionsSnap = await getDocs(prescriptionsQuery);
-
-        
-       
-          //  const safePrescription = Array.isArray(data.prescription) ? data.prescription : [];
-          //  setPrescription(safePrescription);
           if (!prescriptionsSnap.empty) {
             const prescriptionData = prescriptionsSnap.docs.map(doc => doc.data().content);
             setPrescription(prescriptionData); // This will be an array
@@ -102,7 +97,7 @@ const BillingForm = ({ patientId }) => {
       });
       logger.info('Billing info saved', { patientId });
       alert('Billing information saved!');
-      // setCharges([]);// don't clear charges right after saving
+      
       <button onClick={() => setCharges([])}>Clear Bill Form</button>
 
     } 
@@ -111,20 +106,7 @@ const BillingForm = ({ patientId }) => {
       alert('Error saving bill.');
     }
   };
-  //  old form of download pdf
-  // const downloadPDF = async () => {
-  //   if (!billRef.current) return;
-  //   const canvas = await html2canvas(billRef.current);
-  //   const imgData = canvas.toDataURL("image/png");
-  
-  //   const pdf = new jsPDF();
-  //   const imgProps = pdf.getImageProperties(imgData);
-  //   const pdfWidth = pdf.internal.pageSize.getWidth();
-  //   const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
-  
-  //   pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
-  //   pdf.save(`Bill_${patient?.name || 'patient'}.pdf`);
-  // };
+ 
   // new fom of download pdf
   const downloadPDF = () => {
     if (!patient) return;
@@ -134,12 +116,12 @@ const BillingForm = ({ patientId }) => {
   
     // Clinic Header
     pdf.setFontSize(16);
-    pdf.text(" My Clinic", 80, y);
+    pdf.text(" Fast Cure Medicare", 80, y);
     y += 7;
     pdf.setFontSize(10);
-    pdf.text("1234 ABCD  Street, Mumbai", 80, y);
+    pdf.text("1234 pritampura  Street, Delhi", 80, y);
     y += 5;
-    pdf.text("Phone: +91-98XXXXXXXX | Email: contact@MyClinic.com", 50, y);
+    pdf.text("Phone: +91-98XXXXXXXX | Email: support@fastcuremedicare.com", 50, y);
     y += 10;
   
     // Bill Info

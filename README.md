@@ -103,8 +103,10 @@ Clinic--Management--System
 │   │   ├── auth
 │   │   │   └── AuthService.js
 │   │   ├── components
+│   │   │   ├── About.jsx
 │   │   │   ├── AdminPanel.jsx
 │   │   │   ├── BillingForm.jsx
+│   │   │   ├── Contact.jsx
 │   │   │   ├── DoctorDashboard.jsx
 │   │   │   ├── Footer.jsx
 │   │   │   ├── Header.jsx
@@ -118,9 +120,11 @@ Clinic--Management--System
 │   │   ├── services
 │   │   │   └── firebase.jsx
 │   │   ├── styles
+│   │   │   ├── About.css
 │   │   │   ├── App.css
 │   │   │   ├── AdminPanel.css
 │   │   │   ├── BillingForm.css
+│   │   │   ├── Contact.css
 │   │   │   ├── DoctorDashboard.css
 │   │   │   ├── Footer.css
 │   │   │   ├── Header.css

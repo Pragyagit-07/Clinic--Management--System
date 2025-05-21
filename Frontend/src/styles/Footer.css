@@ -1,3 +1,18 @@
+.footer-links {
+  margin-top: 10px;
+}
+
+.footer-links a {
+  color: #ffffff;
+  margin: 0 5px;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+
 .main-footer {
     background:  #003b6f; 
     color: #ffffff;

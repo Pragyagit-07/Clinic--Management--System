@@ -26,7 +26,7 @@ function App() {
         {/* <Route path="/" element={<Login />} /> */}
 
 {/* Auth routes */}
-<Route path="/signup" element={<SignUp />} /> 
+{/* < Route path='/signup' element={<SignUp/>}/> */}
 <Route path="/login" element={<Login />} />
 
 {/* Dashboard routes */}

@@ -91,9 +91,9 @@ const [showResetBox, setShowResetBox] = useState(false);
     <button onClick={handleResetPassword}>Send Reset Email</button>
   </div>
 )}
-      <p className="signup-link">
+      {/* <p className="signup-link">
           Don't have an account? <Link to="/signup">Sign up here</Link>
-        </p>
+        </p> */}
       </div>
      </div>
   );
